@@ -1,0 +1,236 @@
+/*-------------------------------------
+VARIABLES
+--------------------------------------*/
+:root {
+    --primaryColor: #00B87B;
+    --secondaryColor: #314355;
+    --bgColor: #2C3E50;
+    --light: #fff;
+    --transition: .5s ease-in;
+    --transition-out: .4s ease-out;
+}
+
+/*-------------------------------------
+ANIMATIONS
+--------------------------------------*/
+@keyframes fadeUp {
+
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    80% {
+        opacity: 0.65;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*-------------------------------------
+DEFAULT STYLES
+--------------------------------------*/
+
+body {
+    background-color: var(--bgColor);
+    color: var(--light);
+    font-family: "Heebo", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+a {
+    color: var(--light) !important;
+    transition: var(--transition) !important;
+    text-decoration: none;
+}
+
+a:hover {
+    transition: var(--transition-out);
+    color: var(--primaryColor) !important;
+}
+
+
+
+/*-------------------------------------
+UTILITIES
+--------------------------------------*/
+.text-primary {
+    color: var(--primaryColor) !important;
+}
+
+.text-secondary {
+    color: var(--secondaryColor) !important;
+}
+
+.bg-primary {
+    background-color: var(--primaryColor) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondaryColor) !important;
+}
+
+.section {
+    padding: 60px 0px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    display: block;
+    content: "";
+    width: 80px;
+    height: 2px;
+    height: 2px;
+    background-color: var(--light);
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+}
+
+.section-title::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--light);
+    position: absolute;
+    bottom: -4px;
+}
+
+.section-text {
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.btn {
+    border: 2px solid var(--primaryColor);
+    background: transparent;
+    color: var(--light);
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+
+.btn:hover {
+    transition: var(--transition-out);
+    transform: translateY(-10px);
+    border: 2px solid var(--light);
+}
+
+
+.animated {
+    animation: fadeUp 1s var(--transition-out);
+}
+
+.testimonial-img {
+    width: 60px;
+    height: 60px;
+}
+
+.toTop {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+
+.toTop.animate {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+
+/*-------------------------------------
+FORM SECTION
+--------------------------------------*/
+.form-element {
+    background: var(--secondaryColor);
+    border: none;
+    outline: none;
+    color: var(--light);
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.form-element::placeholder {
+    color: var(--light);
+}
+
+textarea {
+    height: 200px;
+}
+
+.submit-btn {
+    background: var(--primaryColor);
+    font-weight: 700;
+    color: var(--light);
+    text-transform: uppercase;
+    padding: 12px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    transition: var(--transition-out);
+    background: transparent;
+    color: var(--primaryColor);
+    border: 2px solid var(--primaryColor);
+    transform: translateY(10px);
+}
+
+
+
+/*-------------------------------------
+RESPONSIVE
+--------------------------------------*/
+
+@media(max-width:576px) {
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .section-text {
+        font-size: 0.8rem;
+    }
+
+    .btn,
+    .submit-btn {
+        padding: 7px;
+        font-size: 0.8rem;
+    }
+
+    .form-element {
+        padding: 13px;
+        font-size: 0.8rem;
+    }
+}
