@@ -58,6 +58,8 @@ function scrollToTop() {
 
 window.onscroll = function () {
     myFunction();
+    testimonial();
+    contact();
 }
 
 function myFunction() {
@@ -65,5 +67,35 @@ function myFunction() {
         document.querySelector(".toTop").classList.remove('animate');
     } else {
         document.querySelector(".toTop").classList.add('animate');
+    }
+}
+
+// ANIMATIONS ON SCROLL
+
+function testimonial() {
+    const testimonialSection = document.querySelector('.testimonial');
+    const positionTestimonialSection = testimonialSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    const testimonialItems = document.querySelectorAll('.testimonial .testimonial-item');
+
+    for (item of testimonialItems) {
+
+        if (positionTestimonialSection < screenPosition) {
+            item.classList.add('animateSection');
+        }
+    }
+}
+
+function contact() {
+    const contactSection = document.querySelector('.contact');
+    const positionContactSection = contactSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    const contactItems = document.querySelectorAll('.contact .contact-item');
+
+    for (item of contactItems) {
+
+        if (positionContactSection < screenPosition) {
+            item.classList.add('animateSection');
+        }
     }
 }

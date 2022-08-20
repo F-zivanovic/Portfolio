@@ -64,7 +64,6 @@ a:hover {
 }
 
 
-
 /*-------------------------------------
 UTILITIES
 --------------------------------------*/
@@ -84,8 +83,8 @@ UTILITIES
     background-color: var(--secondaryColor) !important;
 }
 
-.section {
-    padding: 60px 0px;
+.pt-5 {
+    padding-top: 50px !important;
 }
 
 .section-title {
@@ -160,6 +159,19 @@ UTILITIES
 .toTop.animate {
     opacity: 0;
     transform: translateX(100%);
+}
+
+
+.testimonial-item,
+.contact-item {
+    transform: translateY(50%);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.animateSection {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
